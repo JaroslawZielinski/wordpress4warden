@@ -1,0 +1,13 @@
+{
+    "name": "jaroslawzielinski/wordpress4warden",
+    "description": "Wordpress 4.x Warden project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jarosław Zieliński",
+            "email": "jarek.zielinski82@gmail.com"
+        }
+    ],
+    "require": {}
+}

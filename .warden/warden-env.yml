@@ -1,0 +1,38 @@
+version: "3.5"
+
+services:
+  php-fpm:
+    image: ${PHP_IMAGE_NAME}
+    build:
+      context: ./dockerfiles/php-fpm
+    env_file:
+      - .env
+    ports:
+      - "22:22"
+      - "990:990"
+    secrets:
+      - host_ssh_key
+    volumes:
+      - rootcert:/etc/ssl/warden-rootca-cert
+      - composer:/home/www-data/.composer
+      - ./.warden/conf/01-php.ini:/etc/php.d/01-php.ini
+      - .env:/var/www/.env
+      - ~/.ssh:/root/.ssh-keys:ro
+    environment:
+      SSH_USER: $USER
+
+  nginx:
+    volumes:
+      - ./.warden/nginx/custom.conf:/etc/nginx/default.d/custom.conf
+
+  db:
+    volumes:
+      - "./data/db/mysql:/var/lib/mysql"
+
+volumes:
+  rootcert: {}
+  composer: {}
+
+secrets:
+  host_ssh_key:
+    file: ~/.ssh/id_rsa
