@@ -132,3 +132,11 @@ then
 else
   echo "\"includes/urls.sh\" already exists."
 fi
+
+if [ ! -f "includes/wordpress-install.sh" ];
+then
+  echo "\"includes/wordpress-install.sh\" copied."
+  cp vendor/jaroslawzielinski/wordpress4warden/includes/wordpress-install.sh includes/
+else
+  echo "\"includes/wordpress-install.sh\" already exists."
+fi

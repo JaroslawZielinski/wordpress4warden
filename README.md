@@ -8,6 +8,8 @@ cd YourProject
 composer require --dev jaroslawzielinski/wordpress4warden
 sh vendor/jaroslawzielinski/wordpress4warden/setup.sh
 cp .env.dist .env
+make init
+make wordpress-install
 ```
 and finally
 ```ssh
