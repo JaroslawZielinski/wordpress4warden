@@ -1,8 +1,8 @@
 FROM wordpress:php8.1-fpm-alpine
 USER root
-# Install missing dependencies
-RUN yum -y update
-RUN yum -y install mc php-gettext
+## Install missing dependencies
+RUN apk update
+RUN apk add sudo envsubst mc php-gettext
 RUN cd ~
 RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 RUN HASH=`curl -sS https://composer.github.io/installer.sig`
