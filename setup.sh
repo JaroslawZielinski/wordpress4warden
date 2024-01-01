@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mkdir -p .warden/conf
+mkdir -p .warden/nginx
 mkdir -p dockerfiles/php-fpm/.composer
 mkdir -p includes
 
