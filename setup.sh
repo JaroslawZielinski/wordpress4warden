@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p .warden/conf
+mkdir -p dockerfiles/php-fpm/.composer
 mkdir -p includes
 
 if [ ! -f ".env.dist" ];
@@ -129,4 +131,3 @@ then
 else
   echo "\"includes/urls.sh\" already exists."
 fi
-
