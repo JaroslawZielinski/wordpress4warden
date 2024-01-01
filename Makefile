@@ -25,6 +25,9 @@ db-ip: ## Show Db IP
 shell: ## Shell
 	warden shell
 
+wordpress-install: ## Wordpress Install
+	./includes/wordpress-install.sh
+
 urls: ## Show Urls
 	./includes/urls.sh
 
