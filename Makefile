@@ -25,6 +25,12 @@ db-ip: ## Show Db IP
 shell: ## Shell
 	warden shell
 
+restore-db: ## Restore Db From wordpress.sql.gz
+	./includes/restore-db.sh
+
+save-db: ## Save Db To wordpress.sql.gz
+	./includes/save-db.sh
+
 wordpress-install: ## Wordpress Install
 	./includes/wordpress-install.sh
 
