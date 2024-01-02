@@ -11,7 +11,13 @@ cp .env.dist .env
 make init
 make wordpress-install
 ```
+delete file `wp-config.php`
+
+run your url and setup wordpress. Copy all of the secret values from new created `wp-config.php` to .env file after successful installation. 
+
 and finally
 ```ssh
 make docker-down init
 ```
+
+Enjoy Your Wordpress World!
