@@ -1,14 +1,27 @@
-# project
+# wordpress4warden
+Wordpress 4.x Warden project
 
-Prerequisites:
+# prerequisites:
 
 * Warden (see here https://docs.warden.dev/installing.html)
 
-How to run project for the first time:
+# how to use shell commands
+in [packagist](https://packagist.org/packages/jaroslawzielinski/wordpress4warden)
+```ssh
+cd YourProject
+composer require --dev jaroslawzielinski/wordpress4warden
+sh vendor/jaroslawzielinski/wordpress4warden/setup.sh
+cp .env.dist .env
+make init
+make wordpress-install
+```
+delete file `wp-config.php`
 
-* make docker-down init
-* make wordpress-install
+run your url and setup wordpress. Copy all of the secret values from new created `wp-config.php` to .env file after successful installation. 
 
-How to run project after install:
+and finally
+```ssh
+make docker-down init
+```
 
-* make docker-down init
+Enjoy Your Wordpress World!
