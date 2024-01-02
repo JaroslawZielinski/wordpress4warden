@@ -9,5 +9,7 @@
             "email": "jarek.zielinski82@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
 }

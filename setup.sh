@@ -13,6 +13,22 @@ else
   echo "\".env.dist\" already exists."
 fi
 
+if [ ! -f "dbip.conf" ];
+then
+  echo "\"dbip.conf\" copied."
+  cp vendor/jaroslawzielinski/wordpress4warden/dbip.conf .
+else
+  echo "\"dbip.conf\" already exists."
+fi
+
+if [ ! -f "wp-config.php" ];
+then
+  echo "\"wp-config.php\" copied."
+  cp vendor/jaroslawzielinski/wordpress4warden/wp-config.php .
+else
+  echo "\"wp-config.php\" already exists."
+fi
+
 if [ ! -f ".warden/conf/01-php.ini" ];
 then
   echo "\".warden/conf/01-php.ini\" copied."

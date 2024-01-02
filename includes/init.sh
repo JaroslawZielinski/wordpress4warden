@@ -14,9 +14,10 @@ warden env exec -u root -T php-fpm bash -c "/usr/bin/envsubst < /root/.composer/
 read -p "Rebuild project with composer (y/n)?" choice
 case "$choice" in
   y|Y ) echo "yes";;
-  n|N ) exit 0;;
-  * ) exit 0;;
+  n|N ) . includes/dbip.sh;exit 0;;
+  * ) . includes/dbip.sh;exit 0;;
 esac
+. includes/dbip.sh
 warden env exec -T php-fpm bash -c "composer require --dev jaroslawzielinski/wordpress4warden dev-master"
 warden env exec -T php-fpm bash -c "sh vendor/jaroslawzielinski/wordpress4warden/setup.sh"
 :: "Finished."
