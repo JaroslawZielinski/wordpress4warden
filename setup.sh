@@ -125,6 +125,22 @@ else
   echo "\"includes/init.sh\" already exists."
 fi
 
+if [ ! -f "includes/restore-db.sh" ];
+then
+  echo "\"includes/restore-db.sh\" copied."
+  cp vendor/jaroslawzielinski/wordpress4warden/includes/restore-db.sh includes/
+else
+  echo "\"includes/restore-db.sh\" already exists."
+fi
+
+if [ ! -f "includes/save-db.sh" ];
+then
+  echo "\"includes/save-db.sh\" copied."
+  cp vendor/jaroslawzielinski/wordpress4warden/includes/save-db.sh includes/
+else
+  echo "\"includes/save-db.sh\" already exists."
+fi
+
 if [ ! -f "includes/mailhog.sh" ];
 then
   echo "\"includes/mailhog.sh\" copied."
