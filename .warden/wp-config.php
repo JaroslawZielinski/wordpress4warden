@@ -18,14 +18,16 @@
  * @package WordPress
  */
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
 $dbip = Dotenv\Dotenv::createImmutable(__DIR__, 'dbip.conf');
 $dbip->safeLoad();
 
-$DB_NAME = $_ENV['DB_NAME'] ?? '';
-$DB_USER = $_ENV['DB_USER'] ?? '';
+$DB_DATABASE = $_ENV['DB_DATABASE'] ?? '';
+$DB_USERNAME = $_ENV['DB_USERNAME'] ?? '';
 $DB_PASSWORD = $_ENV['DB_PASSWORD'] ?? '';
 $DB_HOST = $_ENV['DB_HOST'] ?? '';
 $DB_CHARSET = $_ENV['DB_CHARSET'] ?? '';
@@ -39,14 +41,14 @@ $WP_AUTH_SALT = $_ENV['WP_AUTH_SALT'] ?? '';
 $WP_SECURE_AUTH_SALT = $_ENV['WP_SECURE_AUTH_SALT'] ?? '';
 $WP_LOGGED_IN_SALT = $_ENV['WP_LOGGED_IN_SALT'] ?? '';
 $WP_NONCE_SALT = $_ENV['WP_NONCE_SALT'] ?? '';
-$WP_DEBUG = $_ENV['WP_DEBUG'] ?? '';
+$WP_DEBUG = $_ENV['WP_DEBUG'] ?? false;
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', $DB_NAME );
+define( 'DB_NAME', $DB_DATABASE );
 
 /** Database username */
-define( 'DB_USER', $DB_USER );
+define( 'DB_USER', $DB_USERNAME );
 
 /** Database password */
 define( 'DB_PASSWORD', $DB_PASSWORD );
@@ -112,7 +114,7 @@ define( 'WP_DEBUG', $WP_DEBUG );
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+    define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
