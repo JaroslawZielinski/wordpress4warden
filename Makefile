@@ -4,6 +4,7 @@
 
 init: ## Init
 	./includes/init.sh
+	make urls mailhog
 
 docker-up: ## Docker Up
 	@echo "Dockers UP"
