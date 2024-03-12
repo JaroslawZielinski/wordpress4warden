@@ -1,6 +1,8 @@
 # wordpress4warden
 Wordpress 4.x Warden project
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jaroslawzielinski)
+
 # how to use shell commands
 in [packagist](https://packagist.org/packages/jaroslawzielinski/wordpress4warden)
 ```ssh
