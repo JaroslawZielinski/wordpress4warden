@@ -26,9 +26,9 @@ $dotenv->safeLoad();
 $dbip = Dotenv\Dotenv::createImmutable(__DIR__, 'dbip.conf');
 $dbip->safeLoad();
 
-$DB_DATABASE = $_ENV['DB_DATABASE'] ?? '';
-$DB_USERNAME = $_ENV['DB_USERNAME'] ?? '';
-$DB_PASSWORD = $_ENV['DB_PASSWORD'] ?? '';
+$DB_DATABASE = $_ENV['MYSQL_DATABASE'] ?? '';
+$DB_USERNAME = $_ENV['MYSQL_USER'] ?? '';
+$DB_PASSWORD = $_ENV['MYSQL_PASSWORD'] ?? '';
 $DB_HOST = $_ENV['DB_HOST'] ?? '';
 $DB_CHARSET = $_ENV['DB_CHARSET'] ?? '';
 $DB_COLLATE = $_ENV['DB_COLLATE'] ?? '';
