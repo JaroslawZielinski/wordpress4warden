@@ -26,4 +26,33 @@ and finally
 make docker-down init
 ```
 
+# If encounter any problem with database:
+
+### Connect to MySQL (via localhost) [after](https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server#answer-22605418)
+
+```sql
+mysql -uroot -p
+```
+If the MySQL server is running in Kubernetes (K8s) and being accessed via a NodePort
+
+```sql
+kubectl exec -it [pod-name] -- /bin/bash
+mysql -uroot -p
+```
+
+### Create user
+```sql
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+```
+
+### Grant permissions
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
+```
+
+### Flush privileges
+```sql
+FLUSH PRIVILEGES;
+```
+
 Enjoy Your Wordpress World!
