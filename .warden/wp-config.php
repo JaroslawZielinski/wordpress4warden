@@ -42,6 +42,7 @@ $WP_SECURE_AUTH_SALT = $_ENV['WP_SECURE_AUTH_SALT'] ?? '';
 $WP_LOGGED_IN_SALT = $_ENV['WP_LOGGED_IN_SALT'] ?? '';
 $WP_NONCE_SALT = $_ENV['WP_NONCE_SALT'] ?? '';
 $WP_DEBUG = $_ENV['WP_DEBUG'] ?? false;
+$WP_TABLE_PREFIX = $_ENV['WP_TABLE_PREFIX'] ?? 'wp_';
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -61,6 +62,9 @@ define( 'DB_CHARSET', $DB_CHARSET );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', $DB_COLLATE );
+
+/** Tagble prefix */
+define( 'WP_TABLE_PREFIX', $WP_TABLE_PREFIX );
 
 /**#@+
  * Authentication unique keys and salts.
@@ -90,7 +94,7 @@ define( 'NONCE_SALT',       $WP_NONCE_SALT );
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'wp_';
+$table_prefix = $WP_TABLE_PREFIX;
 
 /**
  * For developers: WordPress debugging mode.
