@@ -2,6 +2,7 @@
 
 mkdir -p .warden/conf
 mkdir -p .warden/nginx
+mkdir -p dbtests/
 mkdir -p dockerfiles/php-fpm/.composer
 mkdir -p includes
 
@@ -69,6 +70,46 @@ else
   echo "\"PROJECT.md\" already exists."
 fi
 
+if [ ! -f "README.md" ];
+then
+  echo "\"README.md\" copied."
+  cp vendor/jaroslawzielinski/dbtests/README.md .
+else
+  echo "\"README.md\" already exists."
+fi
+
+if [ ! -f "config.env" ];
+then
+  echo "\"config.env\" copied."
+  cp vendor/jaroslawzielinski/dbtests/config.env .
+else
+  echo "\"config.env\" already exists."
+fi
+
+if [ ! -f "idFinder.sh" ];
+then
+  echo "\"idFinder.sh\" copied."
+  cp vendor/jaroslawzielinski/dbtests/idFinder.sh .
+else
+  echo "\"idFinder.sh\" already exists."
+fi
+
+if [ ! -f "structureFinder.sh" ];
+then
+  echo "\"structureFinder.sh\" copied."
+  cp vendor/jaroslawzielinski/dbtests/structureFinder.sh .
+else
+  echo "\"structureFinder.sh\" already exists."
+fi
+
+if [ ! -f "wordFinder.sh" ];
+then
+  echo "\"wordFinder.sh\" copied."
+  cp vendor/jaroslawzielinski/dbtests/wordFinder.sh .
+else
+  echo "\"wordFinder.sh\" already exists."
+fi
+
 if [ ! -f "dockerfiles/php-fpm/.composer/auth.json.tmpl" ];
 then
   echo "\"dockerfiles/php-fpm/.composer/auth.json.tmpl\" copied."
@@ -83,6 +124,22 @@ then
   cp vendor/jaroslawzielinski/wordpress4warden/dockerfiles/php-fpm/Dockerfile dockerfiles/php-fpm/
 else
   echo "\"dockerfiles/php-fpm/Dockerfile\" already exists."
+fi
+
+if [ ! -f "dockerfiles/php-fpm/Dockerfile_php73" ];
+then
+  echo "\"dockerfiles/php-fpm/Dockerfile_php73\" copied."
+  cp vendor/jaroslawzielinski/wordpress4warden/dockerfiles/php-fpm/Dockerfile_php73 dockerfiles/php-fpm/
+else
+  echo "\"dockerfiles/php-fpm/Dockerfile_php73\" already exists."
+fi
+
+if [ ! -f "dockerfiles/php-fpm/Dockerfile_php81" ];
+then
+  echo "\"dockerfiles/php-fpm/Dockerfile_php81\" copied."
+  cp vendor/jaroslawzielinski/wordpress4warden/dockerfiles/php-fpm/Dockerfile_php81 dockerfiles/php-fpm/
+else
+  echo "\"dockerfiles/php-fpm/Dockerfile_php81\" already exists."
 fi
 
 if [ ! -f "includes/core.sh" ];
