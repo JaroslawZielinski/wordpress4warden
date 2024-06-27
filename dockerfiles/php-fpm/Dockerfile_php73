@@ -2,7 +2,7 @@ FROM wordpress:php7.3-fpm-alpine
 USER root
 ## Install missing dependencies
 RUN apk update
-RUN apk add sudo mc php-gettext
+RUN apk add sudo mc gettext php-gettext
 RUN apk add mariadb-client
 RUN cd ~
 RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
