@@ -70,10 +70,10 @@ else
   echo "\"PROJECT.md\" already exists."
 fi
 
-if [ ! -f "README.md" ];
+if [ ! -f "dbtests/README.md" ];
 then
   echo "\"README.md\" copied."
-  cp vendor/jaroslawzielinski/wordpress4warden/dbtests/README.md .
+  cp vendor/jaroslawzielinski/wordpress4warden/dbtests/README.md dbtests/
 else
   echo "\"README.md\" already exists."
 fi
