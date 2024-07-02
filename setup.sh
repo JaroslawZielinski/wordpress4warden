@@ -81,7 +81,7 @@ fi
 if [ ! -f "config.env" ];
 then
   echo "\"config.env\" copied."
-  cp vendor/jaroslawzielinski/dbtests/config.env .
+  cp vendor/jaroslawzielinski/dbtests/config.env dbtests/
 else
   echo "\"config.env\" already exists."
 fi
@@ -89,7 +89,7 @@ fi
 if [ ! -f "idFinder.sh" ];
 then
   echo "\"idFinder.sh\" copied."
-  cp vendor/jaroslawzielinski/dbtests/idFinder.sh .
+  cp vendor/jaroslawzielinski/dbtests/idFinder.sh dbtests/
 else
   echo "\"idFinder.sh\" already exists."
 fi
@@ -97,7 +97,7 @@ fi
 if [ ! -f "structureFinder.sh" ];
 then
   echo "\"structureFinder.sh\" copied."
-  cp vendor/jaroslawzielinski/dbtests/structureFinder.sh .
+  cp vendor/jaroslawzielinski/dbtests/structureFinder.sh dbtests/
 else
   echo "\"structureFinder.sh\" already exists."
 fi
@@ -105,7 +105,7 @@ fi
 if [ ! -f "wordFinder.sh" ];
 then
   echo "\"wordFinder.sh\" copied."
-  cp vendor/jaroslawzielinski/dbtests/wordFinder.sh .
+  cp vendor/jaroslawzielinski/dbtests/wordFinder.sh dbtests/
 else
   echo "\"wordFinder.sh\" already exists."
 fi
