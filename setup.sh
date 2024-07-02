@@ -73,39 +73,39 @@ fi
 if [ ! -f "README.md" ];
 then
   echo "\"README.md\" copied."
-  cp vendor/jaroslawzielinski/dbtests/README.md .
+  cp vendor/jaroslawzielinski/wordpress4warden/dbtests/README.md .
 else
   echo "\"README.md\" already exists."
 fi
 
-if [ ! -f "config.env" ];
+if [ ! -f "dbtests/config.env" ];
 then
   echo "\"config.env\" copied."
-  cp vendor/jaroslawzielinski/dbtests/config.env dbtests/
+  cp vendor/jaroslawzielinski/wordpress4warden/dbtests/config.env dbtests/
 else
   echo "\"config.env\" already exists."
 fi
 
-if [ ! -f "idFinder.sh" ];
+if [ ! -f "dbtests/idFinder.sh" ];
 then
   echo "\"idFinder.sh\" copied."
-  cp vendor/jaroslawzielinski/dbtests/idFinder.sh dbtests/
+  cp vendor/jaroslawzielinski/wordpress4warden/dbtests/idFinder.sh dbtests/
 else
   echo "\"idFinder.sh\" already exists."
 fi
 
-if [ ! -f "structureFinder.sh" ];
+if [ ! -f "dbtests/structureFinder.sh" ];
 then
   echo "\"structureFinder.sh\" copied."
-  cp vendor/jaroslawzielinski/dbtests/structureFinder.sh dbtests/
+  cp vendor/jaroslawzielinski/wordpress4warden/dbtests/structureFinder.sh dbtests/
 else
   echo "\"structureFinder.sh\" already exists."
 fi
 
-if [ ! -f "wordFinder.sh" ];
+if [ ! -f "dbtests/wordFinder.sh" ];
 then
   echo "\"wordFinder.sh\" copied."
-  cp vendor/jaroslawzielinski/dbtests/wordFinder.sh dbtests/
+  cp vendor/jaroslawzielinski/wordpress4warden/dbtests/wordFinder.sh dbtests/
 else
   echo "\"wordFinder.sh\" already exists."
 fi
