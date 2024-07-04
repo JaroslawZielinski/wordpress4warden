@@ -44,7 +44,8 @@ $WP_AUTH_SALT = $_ENV['WP_AUTH_SALT'] ?? '';
 $WP_SECURE_AUTH_SALT = $_ENV['WP_SECURE_AUTH_SALT'] ?? '';
 $WP_LOGGED_IN_SALT = $_ENV['WP_LOGGED_IN_SALT'] ?? '';
 $WP_NONCE_SALT = $_ENV['WP_NONCE_SALT'] ?? '';
-$WP_DEBUG = $_ENV['WP_DEBUG'] ?? false;
+$WP_DEBUG = filter_var($_ENV['WP_DEBUG'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+$WP_DEBUG = null === $WP_DEBUG ? false : $WP_DEBUG;
 $WP_TABLE_PREFIX = $_ENV['WP_TABLE_PREFIX'] ?? 'wp_';
 
 // ** MySQL settings - You can get this info from your web host ** //
